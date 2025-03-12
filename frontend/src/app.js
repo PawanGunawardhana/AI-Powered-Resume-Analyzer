@@ -25,7 +25,7 @@
 // export default App;
 
 import React from "react";
-import UploadResume from "./components/uploadResume";
+import UploadResume from "./components/uploadForm";
 
 function App() {
   return (
