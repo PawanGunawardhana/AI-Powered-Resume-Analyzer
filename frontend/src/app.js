@@ -24,16 +24,16 @@
 
 // export default App;
 
-import React from "react";
-import UploadResume from "./components/uploadForm";
+import React from 'react';
+import UploadForm from './components/uploadForm';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>AI Resume Analyzer</h1>
-      <UploadResume />
-    </div>
-  );
+    return (
+        <div>
+            <h1>Resume Analyzer</h1>
+            <UploadForm />
+        </div>
+    );
 }
 
 export default App;

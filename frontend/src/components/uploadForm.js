@@ -1,26 +1,30 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
 
-const UploadResume = () => {
-  const [file, setFile] = useState(null);
-  const [analysis, setAnalysis] = useState("");
+function UploadForm() {
+    const [resumeText, setResumeText] = useState('');
+    const [result, setResult] = useState(null);
 
-  const handleUpload = async () => {
-    const formData = new FormData();
-    formData.append("resume", file);
+    const handleUpload = async () => {
+        try {
+            const response = await axios.post('http://localhost:5000/api/upload', {
+                name: "John Doe",
+                email: "johndoe@example.com",
+                resumeText
+            });
+            setResult(response.data.parsedData);
+        } catch (error) {
+            console.error("❌ Upload Error:", error.response?.data || error.message);
+        }
+    };
 
-    const response = await axios.post("http://localhost:5000/api/resume/upload", formData);
-    setAnalysis(response.data.analysis);
-  };
+    return (
+        <div>
+            <textarea placeholder="Paste your resume here..." onChange={(e) => setResumeText(e.target.value)}></textarea>
+            <button onClick={handleUpload}>Analyze Resume</button>
+            {result && <pre>{JSON.stringify(result, null, 2)}</pre>}
+        </div>
+    );
+}
 
-  return (
-    <div>
-      <h2>Upload Resume</h2>
-      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-      <button onClick={handleUpload}>Analyze</button>
-      <p>{analysis}</p>
-    </div>
-  );
-};
-
-export default UploadResume;
+export default UploadForm;
