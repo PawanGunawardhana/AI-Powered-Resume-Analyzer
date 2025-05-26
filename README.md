@@ -19,6 +19,9 @@ Basic Features:
 ✅ Provide suggestions for improvement
 ✅ Store analyzed resumes for users
 
+#backend run
+$npm run dev
+
 AI - Powered Resume Analyzer is a tool that uses artificial intelligence to analyze resumes and provide insights on how well they match the requirements of a job posting. It can help recruiters and hiring managers to quickly and accurately identify the most qualified candidates for a position.
 Here are some of the key features of AI - Powered Resume Analyzer:
 
