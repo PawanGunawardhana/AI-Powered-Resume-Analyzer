@@ -1,0 +1,23 @@
+/resume-analyzer
+  /backend
+    /uploads (Folder for uploaded files)
+    config.js
+    controllers
+      resumeController.js
+    models
+      resume.js
+    routes
+      upload.js
+    server.js
+    utils (empty or as needed)
+  /frontend
+    /src
+      /components
+        uploadForm.js
+        analysisResult.js (can be used to display analysis result later)
+      App.js
+      api.js (if you want to handle API calls here)
+      index.js
+      reportWebVitals.js
+    public
+      index.html
