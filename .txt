@@ -21,3 +21,27 @@
       reportWebVitals.js
     public
       index.html
+
+
+
+resume-analyzer/
+│── backend/
+│   ├── server.js
+│   ├── routes/
+│   │   ├── resumeRoutes.js
+│   ├── models/
+│   │   ├── Resume.js
+│   ├── controllers/
+│   │   ├── resumeController.js
+│   ├── utils/
+│   │   ├── textExtraction.js
+│── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── UploadResume.js
+│   │   │   ├── AnalysisResult.js
+│   │   ├── App.js
+│   │   ├── index.js
+│── .env
+│── package.json
+│── README.md
